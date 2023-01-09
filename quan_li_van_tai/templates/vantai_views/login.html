@@ -1,0 +1,31 @@
+{% extends 'homePage.html' %}
+{% load static %}
+  {% block content %}
+  <div class="wrapper">
+    <main>
+      <section>
+        <div class="modal-dialog">
+              <div class="modal-content">
+                  <div class="modal-header">
+                      <img src="{% static '/images/logo-futabus.png' %}" alt="" style="width: 188px; height: 42px">
+                  </div>
+                  <div class="modal-body">
+                      <div class="login-container">
+                          <div class="phone-login">
+                              <label for="phone-number" style="font-size: 20px;">Đăng nhập bằng số điện thoại</label>
+                              <div class="phone-number">
+                                <input type="text" placeholder="Số điện thoại" class="phone-number_input">
+                              </div>
+                              <p style="font-size: 13px;">
+                                Bằng việc nhấn nút Tiếp tục bạn đã đồng ý với <br> các
+                                <span style="color: #f15a24;">Điều khoản</span> của FUTA</p>
+                          </div>
+                          <button class="button button-login">Tiếp tục</button>
+                      </div>
+                  </div>
+              </div>      
+        </div>
+      </section>
+    </main>
+  </div>
+  {% endblock %}

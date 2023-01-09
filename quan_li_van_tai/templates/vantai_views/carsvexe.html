@@ -1,0 +1,66 @@
+{% extends 'dashboard.html' %} 
+{% load static %} 
+{% block content %}
+<div id="layoutSidenav_content">
+  <main>
+    <div class="container-fluid px-4">
+      <h1 class="mt-4">Quản lý khách hàng</h1>
+      <ol class="breadcrumb mb-4">
+        <li class="breadcrumb-item">
+          <a href="index.html">Dashboard</a>
+        </li>
+        <li class="breadcrumb-item active">Tables</li>
+      </ol>
+      <div class="card mb-4">
+        <div class="card-header">
+          <i class="fas fa-table me-1"></i>
+          Dữ liệu khách hàng
+        </div>
+          <section>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col" >ID</th>
+                  <th scope="col" >Điểm đi</th>
+                  <th scope="col" >Điểm đến</th>
+                  <th scope="col" >Ngày đi</th>
+                  <th scope="col" >Giá vé</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for vexe in cars %}
+                <tr>
+                  <td>{{ vexe.id }}</td>
+                  <td>{{ vexe.diemdi }}</td>
+                  <td>{{ vexe.diemden }}</td>
+                  <td>{{ vexe.date }}</td>
+                  <td>{{ vexe.giave }}</td>
+                  <td><a href="updateveve/{{ vexe.id }}">Edit</a></td>
+                  <td><a href="deleteveve/{{ vexe.id }}">Delete</a></td>
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+            <div style="padding-bottom: 10px; padding-left: 10px;">
+              <a class="btn btn-primary" href="addvexe">Add New Car</a>
+            </div>
+          </section> 
+      </div>
+    </div>
+  </main>
+  <footer class="py-4 bg-light mt-auto">
+    <div class="container-fluid px-4">
+      <div
+        class="d-flex align-items-center justify-content-between small"
+      >
+        <div class="text-muted">Copyright &copy; Your Website 2022</div>
+        <div>
+          <a href="#">Privacy Policy</a>
+          &middot;
+          <a href="#">Terms &amp; Conditions</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</div>
+{% endblock %}

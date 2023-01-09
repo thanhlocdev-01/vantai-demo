@@ -1,0 +1,1009 @@
+{% extends 'homePage.html' %}
+{% load static %}
+  {% block content %}
+  <main>
+    <section>
+      <div class="container">
+        <div class="schedule-container">
+          <div class="search-container">
+            <div
+              type="search"
+              name="search-schedule"
+              id="search-schedule"
+              class="search-box"
+            >
+              <input type="textlt" placeholder="Tìm điểm đi..." name="search" value="" />
+              <button type="submit">
+                <i class="fa fa-search"> </i>
+              </button>
+            </div>
+            <div
+              type="search"
+              name="search-schedule"
+              id="search-schedule"
+              class="search-box"
+            >
+              <input type="textlt" placeholder="Tìm điểm đến..." name="search" value="" />
+              <button type="submit">
+                <i class="fa fa-search"></i>
+              </button>
+            </div>
+          </div>
+          <div class="schedule-scroll">
+            <div class="schedule-table">
+              <table>
+                <thead>
+                  <tr class="table-head">
+                    <th class="schedule-route-name">Tuyến xe</th>
+                    <th class="kind">Loại xe</th>
+                    <th class="distance">Quãng đường</th>
+                    <th class="duration">Thời gian hành trình</th>
+                    <th class="price">Giá vé</th>
+                    <th class="time">Giờ chạy</th>
+                    <th class="end"></th>
+                  </tr>
+                </thead>
+              </table>
+              <div class="groups">
+                <table class="group-table" style="display: none">
+                  <thead>
+                    <tr class="title">
+                      <th colspan="10" class="textlt">Bắc Bình Minh </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="item">
+                      <td class="schedule-route-name">
+                        <button>TP.Hồ Chí Minh</button>
+                      </td>
+                      <td class="kind">Ghế</td>
+                      <td class="distance">159 km</td>
+                      <th class="duration">3 giờ 15 phút</th>
+                      <td class="price"></td>
+                      <td class="time">
+                        <button class="time-detail">
+                          Chi tiết
+                          <i class="fa fa-info-circle" style="font-size: 18px"></i>
+                        </button>
+                      </td>
+                      <td class="end">
+                        <a href="{% url 'addcar' %}" class="buy-btn">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="38"
+                            height="39"
+                            viewBox="0 0 38 39"
+                            fill="#FFF"
+                            fill-rule="evenodd"
+                            class="ticket"
+                          >
+                            <path
+                              fill-rule="nonzero"
+                              d="M23.833 11.25v-4.5c0-1.249-.975-2.25-2.166-2.25H4.333c-1.191 0-2.155 1.001-2.155 2.25v4.5c1.191 0 2.155 1.012 2.155 2.25s-.964 2.25-2.166 2.25v4.5c0 1.238.975 2.25 2.166 2.25h17.334c1.191 0 2.166-1.012 2.166-2.25v-4.5c-1.191 0-2.166-1.012-2.166-2.25s.975-2.25 2.166-2.25zm-9.75 8.438h-2.166v-2.25h2.166v2.25zm0-5.063h-2.166v-2.25h2.166v2.25zm0-5.063h-2.166v-2.25h2.166v2.25z"
+                              transform="rotate(-45 23.243 9.257)"
+                            ></path>
+                          </svg>
+                          <span class="buy-txt menu-link">Đặt vé</span>
+                        </a>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <table class="group-table">
+                  <thead>
+                    <tr class="title">
+                      <th colspan="10" class="textlt">Bạc Liêu </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="item">
+                      <td class="schedule-route-name">
+                        <button>TP.Hồ Chí Minh</button>
+                      </td>
+                      <td class="kind">Giường</td>
+                      <td class="distance">271 km</td>
+                      <th class="duration">6 giờ</th>
+                      <td class="price"></td>
+                      <td class="time">
+                        <button class="time-detail">
+                          Chi tiết
+                          <i
+                            class="fa fa-info-circle"
+                            style="font-size: 18px"
+                          ></i>
+                        </button>
+                      </td>
+                      <td class="end">
+                        <a href="{% url 'addcar' %}" class="buy-btn">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="38"
+                            height="39"
+                            viewBox="0 0 38 39"
+                            fill="#FFF"
+                            fill-rule="evenodd"
+                            class="ticket"
+                          >
+                            <path
+                              fill-rule="nonzero"
+                              d="M23.833 11.25v-4.5c0-1.249-.975-2.25-2.166-2.25H4.333c-1.191 0-2.155 1.001-2.155 2.25v4.5c1.191 0 2.155 1.012 2.155 2.25s-.964 2.25-2.166 2.25v4.5c0 1.238.975 2.25 2.166 2.25h17.334c1.191 0 2.166-1.012 2.166-2.25v-4.5c-1.191 0-2.166-1.012-2.166-2.25s.975-2.25 2.166-2.25zm-9.75 8.438h-2.166v-2.25h2.166v2.25zm0-5.063h-2.166v-2.25h2.166v2.25zm0-5.063h-2.166v-2.25h2.166v2.25z"
+                              transform="rotate(-45 23.243 9.257)"
+                            ></path>
+                          </svg>
+                          <span class="buy-txt menu-link">Đặt vé</span>
+                        </a>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <table class="group-table">
+                    <thead>
+                      <tr class="title">
+                        <th colspan="10" class="textlt">Bảo Lộc </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr class="item">
+                        <td class="schedule-route-name">
+                          <button>Huế</button>
+                        </td>
+                        <td class="kind">Giường</td>
+                        <td class="distance">827 km</td>
+                        <th class="duration">19 giờ</th>
+                        <td class="price"></td>
+                        <td class="time">
+                          <button class="time-detail">
+                            Chi tiết
+                            <i
+                              class="fa fa-info-circle"
+                              style="font-size: 18px"
+                            ></i>
+                          </button>
+                        </td>
+                        <td class="end">
+                          <a href="{% url 'addcar' %}" class="buy-btn">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="38"
+                              height="39"
+                              viewBox="0 0 38 39"
+                              fill="#FFF"
+                              fill-rule="evenodd"
+                              class="ticket"
+                            >
+                              <path
+                                fill-rule="nonzero"
+                                d="M23.833 11.25v-4.5c0-1.249-.975-2.25-2.166-2.25H4.333c-1.191 0-2.155 1.001-2.155 2.25v4.5c1.191 0 2.155 1.012 2.155 2.25s-.964 2.25-2.166 2.25v4.5c0 1.238.975 2.25 2.166 2.25h17.334c1.191 0 2.166-1.012 2.166-2.25v-4.5c-1.191 0-2.166-1.012-2.166-2.25s.975-2.25 2.166-2.25zm-9.75 8.438h-2.166v-2.25h2.166v2.25zm0-5.063h-2.166v-2.25h2.166v2.25zm0-5.063h-2.166v-2.25h2.166v2.25z"
+                                transform="rotate(-45 23.243 9.257)"
+                              ></path>
+                            </svg>
+                            <span class="buy-txt menu-link">Đặt vé</span>
+                          </a>
+                        </td>
+                      </tr>
+                    </tbody>
+                    <tbody>
+                      <tr class="item">
+                        <td class="schedule-route-name">
+                          <button>Quãng Ngãi</button>
+                        </td>
+                        <td class="kind">Giường</td>
+                        <td class="distance">618 km</td>
+                        <th class="duration">12 giờ 57 phút</th>
+                        <td class="price"></td>
+                        <td class="time">
+                          <button class="time-detail">
+                            Chi tiết
+                            <i
+                              class="fa fa-info-circle"
+                              style="font-size: 18px"
+                            ></i>
+                          </button>
+                        </td>
+                        <td class="end">
+                          <a href="{% url 'addcar' %}" class="buy-btn">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="38"
+                              height="39"
+                              viewBox="0 0 38 39"
+                              fill="#FFF"
+                              fill-rule="evenodd"
+                              class="ticket"
+                            >
+                              <path
+                                fill-rule="nonzero"
+                                d="M23.833 11.25v-4.5c0-1.249-.975-2.25-2.166-2.25H4.333c-1.191 0-2.155 1.001-2.155 2.25v4.5c1.191 0 2.155 1.012 2.155 2.25s-.964 2.25-2.166 2.25v4.5c0 1.238.975 2.25 2.166 2.25h17.334c1.191 0 2.166-1.012 2.166-2.25v-4.5c-1.191 0-2.166-1.012-2.166-2.25s.975-2.25 2.166-2.25zm-9.75 8.438h-2.166v-2.25h2.166v2.25zm0-5.063h-2.166v-2.25h2.166v2.25zm0-5.063h-2.166v-2.25h2.166v2.25z"
+                                transform="rotate(-45 23.243 9.257)"
+                              ></path>
+                            </svg>
+                            <span class="buy-txt menu-link">Đặt vé</span>
+                          </a>
+                        </td>
+                      </tr>
+                      <tr class="item">
+                        <td class="schedule-route-name">
+                          <button>Đà Nẵng</button>
+                        </td>
+                        <td class="kind">Giường</td>
+                        <td class="distance">756 km</td>
+                        <th class="duration">15 giờ 40 phút</th>
+                        <td class="price"></td>
+                        <td class="time">
+                          <button class="time-detail">
+                            Chi tiết
+                            <i
+                              class="fa fa-info-circle"
+                              style="font-size: 18px"
+                            ></i>
+                          </button>
+                        </td>
+                        <td class="end">
+                          <a href="{% url 'addcar' %}" class="buy-btn">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="38"
+                              height="39"
+                              viewBox="0 0 38 39"
+                              fill="#FFF"
+                              fill-rule="evenodd"
+                              class="ticket"
+                            >
+                              <path
+                                fill-rule="nonzero"
+                                d="M23.833 11.25v-4.5c0-1.249-.975-2.25-2.166-2.25H4.333c-1.191 0-2.155 1.001-2.155 2.25v4.5c1.191 0 2.155 1.012 2.155 2.25s-.964 2.25-2.166 2.25v4.5c0 1.238.975 2.25 2.166 2.25h17.334c1.191 0 2.166-1.012 2.166-2.25v-4.5c-1.191 0-2.166-1.012-2.166-2.25s.975-2.25 2.166-2.25zm-9.75 8.438h-2.166v-2.25h2.166v2.25zm0-5.063h-2.166v-2.25h2.166v2.25zm0-5.063h-2.166v-2.25h2.166v2.25z"
+                                transform="rotate(-45 23.243 9.257)"
+                              ></path>
+                            </svg>
+                            <span class="buy-txt menu-link">Đặt vé</span>
+                          </a>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <table class="group-table">
+                      <thead>
+                        <tr class="title">
+                          <th colspan="10" class="textlt">Bến Tre </th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr class="item">
+                          <td class="schedule-route-name">
+                            <button>TP.Hồ Chí Minh</button>
+                          </td>
+                          <td class="kind">Ghế</td>
+                          <td class="distance">75 km</td>
+                          <th class="duration">2 giờ</th>
+                          <td class="price"></td>
+                          <td class="time">
+                            <button class="time-detail">
+                              Chi tiết
+                              <i
+                                class="fa fa-info-circle"
+                                style="font-size: 18px"
+                              ></i>
+                            </button>
+                          </td>
+                          <td class="end">
+                            <a href="{% url 'addcar' %}" class="buy-btn">
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="38"
+                                height="39"
+                                viewBox="0 0 38 39"
+                                fill="#FFF"
+                                fill-rule="evenodd"
+                                class="ticket"
+                              >
+                                <path
+                                  fill-rule="nonzero"
+                                  d="M23.833 11.25v-4.5c0-1.249-.975-2.25-2.166-2.25H4.333c-1.191 0-2.155 1.001-2.155 2.25v4.5c1.191 0 2.155 1.012 2.155 2.25s-.964 2.25-2.166 2.25v4.5c0 1.238.975 2.25 2.166 2.25h17.334c1.191 0 2.166-1.012 2.166-2.25v-4.5c-1.191 0-2.166-1.012-2.166-2.25s.975-2.25 2.166-2.25zm-9.75 8.438h-2.166v-2.25h2.166v2.25zm0-5.063h-2.166v-2.25h2.166v2.25zm0-5.063h-2.166v-2.25h2.166v2.25z"
+                                  transform="rotate(-45 23.243 9.257)"
+                                ></path>
+                              </svg>
+                              <span class="buy-txt menu-link">Đặt vé</span>
+                            </a>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  <table class="group-table">
+                      <thead>
+                        <tr class="title">
+                          <th colspan="10" class="textlt">Buôn Ma Thuộc </th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr class="item">
+                          <td class="schedule-route-name">
+                            <button>TP.Hồ Chí Minh</button>
+                          </td>
+                          <td class="kind">Giường</td>
+                          <td class="distance">435 km</td>
+                          <th class="duration">9 giờ</th>
+                          <td class="price"></td>
+                          <td class="time">
+                            <button class="time-detail">
+                              Chi tiết
+                              <i
+                                class="fa fa-info-circle"
+                                style="font-size: 18px"
+                              ></i>
+                            </button>
+                          </td>
+                          <td class="end">
+                            <a href="{% url 'addcar' %}" class="buy-btn">
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="38"
+                                height="39"
+                                viewBox="0 0 38 39"
+                                fill="#FFF"
+                                fill-rule="evenodd"
+                                class="ticket"
+                              >
+                                <path
+                                  fill-rule="nonzero"
+                                  d="M23.833 11.25v-4.5c0-1.249-.975-2.25-2.166-2.25H4.333c-1.191 0-2.155 1.001-2.155 2.25v4.5c1.191 0 2.155 1.012 2.155 2.25s-.964 2.25-2.166 2.25v4.5c0 1.238.975 2.25 2.166 2.25h17.334c1.191 0 2.166-1.012 2.166-2.25v-4.5c-1.191 0-2.166-1.012-2.166-2.25s.975-2.25 2.166-2.25zm-9.75 8.438h-2.166v-2.25h2.166v2.25zm0-5.063h-2.166v-2.25h2.166v2.25zm0-5.063h-2.166v-2.25h2.166v2.25z"
+                                  transform="rotate(-45 23.243 9.257)"
+                                ></path>
+                              </svg>
+                              <span class="buy-txt menu-link">Đặt vé</span>
+                            </a>
+                          </td>
+                        </tr>
+                        <tr class="item">
+                          <td class="schedule-route-name">
+                            <button>Nha Trang</button>
+                          </td>
+                          <td class="kind">Giường</td>
+                          <td class="distance">184 km</td>
+                          <th class="duration">4 giờ</th>
+                          <td class="price"></td>
+                          <td class="time">
+                            <button class="time-detail">
+                              Chi tiết
+                              <i
+                                class="fa fa-info-circle"
+                                style="font-size: 18px"
+                              ></i>
+                            </button>
+                          </td>
+                          <td class="end">
+                            <a href="{% url 'addcar' %}" class="buy-btn">
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="38"
+                                height="39"
+                                viewBox="0 0 38 39"
+                                fill="#FFF"
+                                fill-rule="evenodd"
+                                class="ticket"
+                              >
+                                <path
+                                  fill-rule="nonzero"
+                                  d="M23.833 11.25v-4.5c0-1.249-.975-2.25-2.166-2.25H4.333c-1.191 0-2.155 1.001-2.155 2.25v4.5c1.191 0 2.155 1.012 2.155 2.25s-.964 2.25-2.166 2.25v4.5c0 1.238.975 2.25 2.166 2.25h17.334c1.191 0 2.166-1.012 2.166-2.25v-4.5c-1.191 0-2.166-1.012-2.166-2.25s.975-2.25 2.166-2.25zm-9.75 8.438h-2.166v-2.25h2.166v2.25zm0-5.063h-2.166v-2.25h2.166v2.25zm0-5.063h-2.166v-2.25h2.166v2.25z"
+                                  transform="rotate(-45 23.243 9.257)"
+                                ></path>
+                              </svg>
+                              <span class="buy-txt menu-link">Đặt vé</span>
+                            </a>
+                          </td>
+                        </tr>
+                      </tbody>
+                  </table>
+                  <table class="group-table">
+                      <thead>
+                        <tr class="title">
+                          <th colspan="10" class="textlt">Bến Xe An Sương </th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr class="item">
+                          <td class="schedule-route-name">
+                            <button>Quãng Ngãi</button>
+                          </td>
+                          <td class="kind">Giường</td>
+                          <td class="distance">816 km</td>
+                          <th class="duration">16 giờ 25 phút</th>
+                          <td class="price"></td>
+                          <td class="time">
+                            <button class="time-detail">
+                              Chi tiết
+                              <i
+                                class="fa fa-info-circle"
+                                style="font-size: 18px"
+                              ></i>
+                            </button>
+                          </td>
+                          <td class="end">
+                            <a href="{% url 'addcar' %}" class="buy-btn">
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="38"
+                                height="39"
+                                viewBox="0 0 38 39"
+                                fill="#FFF"
+                                fill-rule="evenodd"
+                                class="ticket"
+                              >
+                                <path
+                                  fill-rule="nonzero"
+                                  d="M23.833 11.25v-4.5c0-1.249-.975-2.25-2.166-2.25H4.333c-1.191 0-2.155 1.001-2.155 2.25v4.5c1.191 0 2.155 1.012 2.155 2.25s-.964 2.25-2.166 2.25v4.5c0 1.238.975 2.25 2.166 2.25h17.334c1.191 0 2.166-1.012 2.166-2.25v-4.5c-1.191 0-2.166-1.012-2.166-2.25s.975-2.25 2.166-2.25zm-9.75 8.438h-2.166v-2.25h2.166v2.25zm0-5.063h-2.166v-2.25h2.166v2.25zm0-5.063h-2.166v-2.25h2.166v2.25z"
+                                  transform="rotate(-45 23.243 9.257)"
+                                ></path>
+                              </svg>
+                              <span class="buy-txt menu-link">Đặt vé</span>
+                            </a>
+                          </td>
+                        </tr>
+                        <tr class="item">
+                          <td class="schedule-route-name">
+                            <button>Đà Nẵng</button>
+                          </td>
+                          <td class="kind">Giường</td>
+                          <td class="distance">958 km</td>
+                          <th class="duration">18 giờ 31 phút</th>
+                          <td class="price"></td>
+                          <td class="time">
+                            <button class="time-detail">
+                              Chi tiết
+                              <i
+                                class="fa fa-info-circle"
+                                style="font-size: 18px"
+                              ></i>
+                            </button>
+                          </td>
+                          <td class="end">
+                            <a href="{% url 'addcar' %}" class="buy-btn">
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="38"
+                                height="39"
+                                viewBox="0 0 38 39"
+                                fill="#FFF"
+                                fill-rule="evenodd"
+                                class="ticket"
+                              >
+                                <path
+                                  fill-rule="nonzero"
+                                  d="M23.833 11.25v-4.5c0-1.249-.975-2.25-2.166-2.25H4.333c-1.191 0-2.155 1.001-2.155 2.25v4.5c1.191 0 2.155 1.012 2.155 2.25s-.964 2.25-2.166 2.25v4.5c0 1.238.975 2.25 2.166 2.25h17.334c1.191 0 2.166-1.012 2.166-2.25v-4.5c-1.191 0-2.166-1.012-2.166-2.25s.975-2.25 2.166-2.25zm-9.75 8.438h-2.166v-2.25h2.166v2.25zm0-5.063h-2.166v-2.25h2.166v2.25zm0-5.063h-2.166v-2.25h2.166v2.25z"
+                                  transform="rotate(-45 23.243 9.257)"
+                                ></path>
+                              </svg>
+                              <span class="buy-txt menu-link">Đặt vé</span>
+                            </a>
+                          </td>
+                        </tr>
+                      </tbody>
+                  </table>
+                  <table class="group-table">
+                      <thead>
+                        <tr class="title">
+                          <th colspan="10" class="textlt">Cà Mau </th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr class="item">
+                          <td class="schedule-route-name">
+                            <button>TP.Hồ Chí Minh</button>
+                          </td>
+                          <td class="kind">Giường</td>
+                          <td class="distance">302 km</td>
+                          <th class="duration">8 giờ</th>
+                          <td class="price"></td>
+                          <td class="time">
+                            <button class="time-detail">
+                              Chi tiết
+                              <i
+                                class="fa fa-info-circle"
+                                style="font-size: 18px"
+                              ></i>
+                            </button>
+                          </td>
+                          <td class="end">
+                            <a href="{% url 'addcar' %}" class="buy-btn">
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="38"
+                                height="39"
+                                viewBox="0 0 38 39"
+                                fill="#FFF"
+                                fill-rule="evenodd"
+                                class="ticket"
+                              >
+                                <path
+                                  fill-rule="nonzero"
+                                  d="M23.833 11.25v-4.5c0-1.249-.975-2.25-2.166-2.25H4.333c-1.191 0-2.155 1.001-2.155 2.25v4.5c1.191 0 2.155 1.012 2.155 2.25s-.964 2.25-2.166 2.25v4.5c0 1.238.975 2.25 2.166 2.25h17.334c1.191 0 2.166-1.012 2.166-2.25v-4.5c-1.191 0-2.166-1.012-2.166-2.25s.975-2.25 2.166-2.25zm-9.75 8.438h-2.166v-2.25h2.166v2.25zm0-5.063h-2.166v-2.25h2.166v2.25zm0-5.063h-2.166v-2.25h2.166v2.25z"
+                                  transform="rotate(-45 23.243 9.257)"
+                                ></path>
+                              </svg>
+                              <span class="buy-txt menu-link">Đặt vé</span>
+                            </a>
+                          </td>
+                        </tr>
+                        <tr class="item">
+                          <td class="schedule-route-name">
+                            <button>Cần Thơ</button>
+                          </td>
+                          <td class="kind">Ghế</td>
+                          <td class="distance">182 km</td>
+                          <th class="duration">4 giờ</th>
+                          <td class="price"></td>
+                          <td class="time">
+                            <button class="time-detail">
+                              Chi tiết
+                              <i
+                                class="fa fa-info-circle"
+                                style="font-size: 18px"
+                              ></i>
+                            </button>
+                          </td>
+                          <td class="end">
+                            <a href="{% url 'addcar' %}" class="buy-btn">
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="38"
+                                height="39"
+                                viewBox="0 0 38 39"
+                                fill="#FFF"
+                                fill-rule="evenodd"
+                                class="ticket"
+                              >
+                                <path
+                                  fill-rule="nonzero"
+                                  d="M23.833 11.25v-4.5c0-1.249-.975-2.25-2.166-2.25H4.333c-1.191 0-2.155 1.001-2.155 2.25v4.5c1.191 0 2.155 1.012 2.155 2.25s-.964 2.25-2.166 2.25v4.5c0 1.238.975 2.25 2.166 2.25h17.334c1.191 0 2.166-1.012 2.166-2.25v-4.5c-1.191 0-2.166-1.012-2.166-2.25s.975-2.25 2.166-2.25zm-9.75 8.438h-2.166v-2.25h2.166v2.25zm0-5.063h-2.166v-2.25h2.166v2.25zm0-5.063h-2.166v-2.25h2.166v2.25z"
+                                  transform="rotate(-45 23.243 9.257)"
+                                ></path>
+                              </svg>
+                              <span class="buy-txt menu-link">Đặt vé</span>
+                            </a>
+                          </td>
+                        </tr>
+                        <tr class="item">
+                          <td class="schedule-route-name">
+                            <button>Bình Dương</button>
+                          </td>
+                          <td class="kind">Giường</td>
+                          <td class="distance">318 km</td>
+                          <th class="duration">6 giờ 2 phút</th>
+                          <td class="price"></td>
+                          <td class="time">
+                            <button class="time-detail">
+                              Chi tiết
+                              <i
+                                class="fa fa-info-circle"
+                                style="font-size: 18px"
+                              ></i>
+                            </button>
+                          </td>
+                          <td class="end">
+                            <a href="{% url 'addcar' %}" class="buy-btn">
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="38"
+                                height="39"
+                                viewBox="0 0 38 39"
+                                fill="#FFF"
+                                fill-rule="evenodd"
+                                class="ticket"
+                              >
+                                <path
+                                  fill-rule="nonzero"
+                                  d="M23.833 11.25v-4.5c0-1.249-.975-2.25-2.166-2.25H4.333c-1.191 0-2.155 1.001-2.155 2.25v4.5c1.191 0 2.155 1.012 2.155 2.25s-.964 2.25-2.166 2.25v4.5c0 1.238.975 2.25 2.166 2.25h17.334c1.191 0 2.166-1.012 2.166-2.25v-4.5c-1.191 0-2.166-1.012-2.166-2.25s.975-2.25 2.166-2.25zm-9.75 8.438h-2.166v-2.25h2.166v2.25zm0-5.063h-2.166v-2.25h2.166v2.25zm0-5.063h-2.166v-2.25h2.166v2.25z"
+                                  transform="rotate(-45 23.243 9.257)"
+                                ></path>
+                              </svg>
+                              <span class="buy-txt menu-link">Đặt vé</span>
+                            </a>
+                          </td>
+                        </tr>
+                        <tr class="item">
+                          <td class="schedule-route-name">
+                            <button>TP. Hồ  Chí Minh</button>
+                          </td>
+                          <td class="kind">Ghế</td>
+                          <td class="distance">290 km</td>
+                          <th class="duration">7 giờ</th>
+                          <td class="price"></td>
+                          <td class="time">
+                            <button class="time-detail">
+                              Chi tiết
+                              <i
+                                class="fa fa-info-circle"
+                                style="font-size: 18px"
+                              ></i>
+                            </button>
+                          </td>
+                          <td class="end">
+                            <a href="{% url 'addcar' %}" class="buy-btn">
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="38"
+                                height="39"
+                                viewBox="0 0 38 39"
+                                fill="#FFF"
+                                fill-rule="evenodd"
+                                class="ticket"
+                              >
+                                <path
+                                  fill-rule="nonzero"
+                                  d="M23.833 11.25v-4.5c0-1.249-.975-2.25-2.166-2.25H4.333c-1.191 0-2.155 1.001-2.155 2.25v4.5c1.191 0 2.155 1.012 2.155 2.25s-.964 2.25-2.166 2.25v4.5c0 1.238.975 2.25 2.166 2.25h17.334c1.191 0 2.166-1.012 2.166-2.25v-4.5c-1.191 0-2.166-1.012-2.166-2.25s.975-2.25 2.166-2.25zm-9.75 8.438h-2.166v-2.25h2.166v2.25zm0-5.063h-2.166v-2.25h2.166v2.25zm0-5.063h-2.166v-2.25h2.166v2.25z"
+                                  transform="rotate(-45 23.243 9.257)"
+                                ></path>
+                              </svg>
+                              <span class="buy-txt menu-link">Đặt vé</span>
+                            </a>
+                          </td>
+                        </tr>
+                      </tbody>
+                  </table>
+                  <table class="group-table">
+                      <thead>
+                        <tr class="title">
+                          <th colspan="10" class="textlt">Cam Ranh </th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr class="item">
+                          <td class="schedule-route-name">
+                            <button>Đà Nẵng</button>
+                          </td>
+                          <td class="kind">Giường</td>
+                          <td class="distance">568 km</td>
+                          <th class="duration">10 giờ 45 phút</th>
+                          <td class="price"></td>
+                          <td class="time">
+                            <button class="time-detail">
+                              Chi tiết
+                              <i
+                                class="fa fa-info-circle"
+                                style="font-size: 18px"
+                              ></i>
+                            </button>
+                          </td>
+                          <td class="end">
+                            <a href="{% url 'addcar' %}" class="buy-btn">
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="38"
+                                height="39"
+                                viewBox="0 0 38 39"
+                                fill="#FFF"
+                                fill-rule="evenodd"
+                                class="ticket"
+                              >
+                                <path
+                                  fill-rule="nonzero"
+                                  d="M23.833 11.25v-4.5c0-1.249-.975-2.25-2.166-2.25H4.333c-1.191 0-2.155 1.001-2.155 2.25v4.5c1.191 0 2.155 1.012 2.155 2.25s-.964 2.25-2.166 2.25v4.5c0 1.238.975 2.25 2.166 2.25h17.334c1.191 0 2.166-1.012 2.166-2.25v-4.5c-1.191 0-2.166-1.012-2.166-2.25s.975-2.25 2.166-2.25zm-9.75 8.438h-2.166v-2.25h2.166v2.25zm0-5.063h-2.166v-2.25h2.166v2.25zm0-5.063h-2.166v-2.25h2.166v2.25z"
+                                  transform="rotate(-45 23.243 9.257)"
+                                ></path>
+                              </svg>
+                              <span class="buy-txt menu-link">Đặt vé</span>
+                            </a>
+                          </td>
+                        </tr>
+                        <tr class="item">
+                          <td class="schedule-route-name">
+                            <button>TP. Hồ Chí Minh</button>
+                          </td>
+                          <td class="kind">Giường</td>
+                          <td class="distance">350 km</td>
+                          <th class="duration">9 giờ</th>
+                          <td class="price"></td>
+                          <td class="time">
+                            <button class="time-detail">
+                              Chi tiết
+                              <i
+                                class="fa fa-info-circle"
+                                style="font-size: 18px"
+                              ></i>
+                            </button>
+                          </td>
+                          <td class="end">
+                            <a href="{% url 'addcar' %}" class="buy-btn">
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="38"
+                                height="39"
+                                viewBox="0 0 38 39"
+                                fill="#FFF"
+                                fill-rule="evenodd"
+                                class="ticket"
+                              >
+                                <path
+                                  fill-rule="nonzero"
+                                  d="M23.833 11.25v-4.5c0-1.249-.975-2.25-2.166-2.25H4.333c-1.191 0-2.155 1.001-2.155 2.25v4.5c1.191 0 2.155 1.012 2.155 2.25s-.964 2.25-2.166 2.25v4.5c0 1.238.975 2.25 2.166 2.25h17.334c1.191 0 2.166-1.012 2.166-2.25v-4.5c-1.191 0-2.166-1.012-2.166-2.25s.975-2.25 2.166-2.25zm-9.75 8.438h-2.166v-2.25h2.166v2.25zm0-5.063h-2.166v-2.25h2.166v2.25zm0-5.063h-2.166v-2.25h2.166v2.25z"
+                                  transform="rotate(-45 23.243 9.257)"
+                                ></path>
+                              </svg>
+                              <span class="buy-txt menu-link">Đặt vé</span>
+                            </a>
+                          </td>
+                        </tr>
+                      </tbody>
+                  </table>
+                  <table class="group-table">
+                      <thead>
+                        <tr class="title">
+                          <th colspan="10" class="textlt">Cần Thơ </th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr class="item">
+                          <td class="schedule-route-name">
+                            <button>Năm Căn</button>
+                          </td>
+                          <td class="kind">Giường</td>
+                          <td class="distance">194 km</td>
+                          <th class="duration">4 giờ 22 phút</th>
+                          <td class="price"></td>
+                          <td class="time">
+                            <button class="time-detail">
+                              Chi tiết
+                              <i
+                                class="fa fa-info-circle"
+                                style="font-size: 18px"
+                              ></i>
+                            </button>
+                          </td>
+                          <td class="end">
+                            <a href="{% url 'addcar' %}" class="buy-btn">
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="38"
+                                height="39"
+                                viewBox="0 0 38 39"
+                                fill="#FFF"
+                                fill-rule="evenodd"
+                                class="ticket"
+                              >
+                                <path
+                                  fill-rule="nonzero"
+                                  d="M23.833 11.25v-4.5c0-1.249-.975-2.25-2.166-2.25H4.333c-1.191 0-2.155 1.001-2.155 2.25v4.5c1.191 0 2.155 1.012 2.155 2.25s-.964 2.25-2.166 2.25v4.5c0 1.238.975 2.25 2.166 2.25h17.334c1.191 0 2.166-1.012 2.166-2.25v-4.5c-1.191 0-2.166-1.012-2.166-2.25s.975-2.25 2.166-2.25zm-9.75 8.438h-2.166v-2.25h2.166v2.25zm0-5.063h-2.166v-2.25h2.166v2.25zm0-5.063h-2.166v-2.25h2.166v2.25z"
+                                  transform="rotate(-45 23.243 9.257)"
+                                ></path>
+                              </svg>
+                              <span class="buy-txt menu-link">Đặt vé</span>
+                            </a>
+                          </td>
+                        </tr>
+                        <tr class="item">
+                          <td class="schedule-route-name">
+                            <button>Cà Mau</button>
+                          </td>
+                          <td class="kind">Ghế</td>
+                          <td class="distance">143 km</td>
+                          <th class="duration">4 giờ</th>
+                          <td class="price"></td>
+                          <td class="time">
+                            <button class="time-detail">
+                              Chi tiết
+                              <i
+                                class="fa fa-info-circle"
+                                style="font-size: 18px"
+                              ></i>
+                            </button>
+                          </td>
+                          <td class="end">
+                            <a href="{% url 'addcar' %}" class="buy-btn">
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="38"
+                                height="39"
+                                viewBox="0 0 38 39"
+                                fill="#FFF"
+                                fill-rule="evenodd"
+                                class="ticket"
+                              >
+                                <path
+                                  fill-rule="nonzero"
+                                  d="M23.833 11.25v-4.5c0-1.249-.975-2.25-2.166-2.25H4.333c-1.191 0-2.155 1.001-2.155 2.25v4.5c1.191 0 2.155 1.012 2.155 2.25s-.964 2.25-2.166 2.25v4.5c0 1.238.975 2.25 2.166 2.25h17.334c1.191 0 2.166-1.012 2.166-2.25v-4.5c-1.191 0-2.166-1.012-2.166-2.25s.975-2.25 2.166-2.25zm-9.75 8.438h-2.166v-2.25h2.166v2.25zm0-5.063h-2.166v-2.25h2.166v2.25zm0-5.063h-2.166v-2.25h2.166v2.25z"
+                                  transform="rotate(-45 23.243 9.257)"
+                                ></path>
+                              </svg>
+                              <span class="buy-txt menu-link">Đặt vé</span>
+                            </a>
+                          </td>
+                        </tr>
+                        <tr class="item">
+                          <td class="schedule-route-name">
+                            <button>Rạch Giá</button>
+                          </td>
+                          <td class="kind">Ghế</td>
+                          <td class="distance">111 km</td>
+                          <th class="duration">3 giờ 30 phút</th>
+                          <td class="price"></td>
+                          <td class="time">
+                            <button class="time-detail">
+                              Chi tiết
+                              <i
+                                class="fa fa-info-circle"
+                                style="font-size: 18px"
+                              ></i>
+                            </button>
+                          </td>
+                          <td class="end">
+                            <a href="{% url 'addcar' %}" class="buy-btn">
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="38"
+                                height="39"
+                                viewBox="0 0 38 39"
+                                fill="#FFF"
+                                fill-rule="evenodd"
+                                class="ticket"
+                              >
+                                <path
+                                  fill-rule="nonzero"
+                                  d="M23.833 11.25v-4.5c0-1.249-.975-2.25-2.166-2.25H4.333c-1.191 0-2.155 1.001-2.155 2.25v4.5c1.191 0 2.155 1.012 2.155 2.25s-.964 2.25-2.166 2.25v4.5c0 1.238.975 2.25 2.166 2.25h17.334c1.191 0 2.166-1.012 2.166-2.25v-4.5c-1.191 0-2.166-1.012-2.166-2.25s.975-2.25 2.166-2.25zm-9.75 8.438h-2.166v-2.25h2.166v2.25zm0-5.063h-2.166v-2.25h2.166v2.25zm0-5.063h-2.166v-2.25h2.166v2.25z"
+                                  transform="rotate(-45 23.243 9.257)"
+                                ></path>
+                              </svg>
+                              <span class="buy-txt menu-link">Đặt vé</span>
+                            </a>
+                          </td>
+                        </tr>
+                        <tr class="item">
+                          <td class="schedule-route-name">
+                            <button>Châu Đốc</button>
+                          </td>
+                          <td class="kind">Ghế</td>
+                          <td class="distance">114 km</td>
+                          <th class="duration">3 giờ 30 phút</th>
+                          <td class="price"></td>
+                          <td class="time">
+                            <button class="time-detail">
+                              Chi tiết
+                              <i
+                                class="fa fa-info-circle"
+                                style="font-size: 18px"
+                              ></i>
+                            </button>
+                          </td>
+                          <td class="end">
+                            <a href="{% url 'addcar' %}" class="buy-btn">
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="38"
+                                height="39"
+                                viewBox="0 0 38 39"
+                                fill="#FFF"
+                                fill-rule="evenodd"
+                                class="ticket"
+                              >
+                                <path
+                                  fill-rule="nonzero"
+                                  d="M23.833 11.25v-4.5c0-1.249-.975-2.25-2.166-2.25H4.333c-1.191 0-2.155 1.001-2.155 2.25v4.5c1.191 0 2.155 1.012 2.155 2.25s-.964 2.25-2.166 2.25v4.5c0 1.238.975 2.25 2.166 2.25h17.334c1.191 0 2.166-1.012 2.166-2.25v-4.5c-1.191 0-2.166-1.012-2.166-2.25s.975-2.25 2.166-2.25zm-9.75 8.438h-2.166v-2.25h2.166v2.25zm0-5.063h-2.166v-2.25h2.166v2.25zm0-5.063h-2.166v-2.25h2.166v2.25z"
+                                  transform="rotate(-45 23.243 9.257)"
+                                ></path>
+                              </svg>
+                              <span class="buy-txt menu-link">Đặt vé</span>
+                            </a>
+                          </td>
+                        </tr>
+                        <tr class="item">
+                          <td class="schedule-route-name">
+                            <button>Đà Lạt</button>
+                          </td>
+                          <td class="kind">Giường</td>
+                          <td class="distance">459 km</td>
+                          <th class="duration">11 giờ</th>
+                          <td class="price"></td>
+                          <td class="time">
+                            <button class="time-detail">
+                              Chi tiết
+                              <i
+                                class="fa fa-info-circle"
+                                style="font-size: 18px"
+                              ></i>
+                            </button>
+                          </td>
+                          <td class="end">
+                            <a href="{% url 'addcar' %}" class="buy-btn">
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="38"
+                                height="39"
+                                viewBox="0 0 38 39"
+                                fill="#FFF"
+                                fill-rule="evenodd"
+                                class="ticket"
+                              >
+                                <path
+                                  fill-rule="nonzero"
+                                  d="M23.833 11.25v-4.5c0-1.249-.975-2.25-2.166-2.25H4.333c-1.191 0-2.155 1.001-2.155 2.25v4.5c1.191 0 2.155 1.012 2.155 2.25s-.964 2.25-2.166 2.25v4.5c0 1.238.975 2.25 2.166 2.25h17.334c1.191 0 2.166-1.012 2.166-2.25v-4.5c-1.191 0-2.166-1.012-2.166-2.25s.975-2.25 2.166-2.25zm-9.75 8.438h-2.166v-2.25h2.166v2.25zm0-5.063h-2.166v-2.25h2.166v2.25zm0-5.063h-2.166v-2.25h2.166v2.25z"
+                                  transform="rotate(-45 23.243 9.257)"
+                                ></path>
+                              </svg>
+                              <span class="buy-txt menu-link">Đặt vé</span>
+                            </a>
+                          </td>
+                        </tr>
+                        <tr class="item">
+                          <td class="schedule-route-name">
+                            <button>TP. Hồ Chí Minh</button>
+                          </td>
+                          <td class="kind">Ghế</td>
+                          <td class="distance">166 km</td>
+                          <th class="duration">3 giờ 30 phút</th>
+                          <td class="price"></td>
+                          <td class="time">
+                            <button class="time-detail">
+                              Chi tiết
+                              <i
+                                class="fa fa-info-circle"
+                                style="font-size: 18px"
+                              ></i>
+                            </button>
+                          </td>
+                          <td class="end">
+                            <a href="{% url 'addcar' %}" class="buy-btn">
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="38"
+                                height="39"
+                                viewBox="0 0 38 39"
+                                fill="#FFF"
+                                fill-rule="evenodd"
+                                class="ticket"
+                              >
+                                <path
+                                  fill-rule="nonzero"
+                                  d="M23.833 11.25v-4.5c0-1.249-.975-2.25-2.166-2.25H4.333c-1.191 0-2.155 1.001-2.155 2.25v4.5c1.191 0 2.155 1.012 2.155 2.25s-.964 2.25-2.166 2.25v4.5c0 1.238.975 2.25 2.166 2.25h17.334c1.191 0 2.166-1.012 2.166-2.25v-4.5c-1.191 0-2.166-1.012-2.166-2.25s.975-2.25 2.166-2.25zm-9.75 8.438h-2.166v-2.25h2.166v2.25zm0-5.063h-2.166v-2.25h2.166v2.25zm0-5.063h-2.166v-2.25h2.166v2.25z"
+                                  transform="rotate(-45 23.243 9.257)"
+                                ></path>
+                              </svg>
+                              <span class="buy-txt menu-link">Đặt vé</span>
+                            </a>
+                          </td>
+                        </tr>
+                        <tr class="item">
+                          <td class="schedule-route-name">
+                            <button>Vũng Tàu</button>
+                          </td>
+                          <td class="kind">Ghế</td>
+                          <td class="distance">252 km</td>
+                          <th class="duration">5 giờ 4 phút</th>
+                          <td class="price"></td>
+                          <td class="time">
+                            <button class="time-detail">
+                              Chi tiết
+                              <i
+                                class="fa fa-info-circle"
+                                style="font-size: 18px"
+                              ></i>
+                            </button>
+                          </td>
+                          <td class="end">
+                            <a href="{% url 'addcar' %}" class="buy-btn">
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="38"
+                                height="39"
+                                viewBox="0 0 38 39"
+                                fill="#FFF"
+                                fill-rule="evenodd"
+                                class="ticket"
+                              >
+                                <path
+                                  fill-rule="nonzero"
+                                  d="M23.833 11.25v-4.5c0-1.249-.975-2.25-2.166-2.25H4.333c-1.191 0-2.155 1.001-2.155 2.25v4.5c1.191 0 2.155 1.012 2.155 2.25s-.964 2.25-2.166 2.25v4.5c0 1.238.975 2.25 2.166 2.25h17.334c1.191 0 2.166-1.012 2.166-2.25v-4.5c-1.191 0-2.166-1.012-2.166-2.25s.975-2.25 2.166-2.25zm-9.75 8.438h-2.166v-2.25h2.166v2.25zm0-5.063h-2.166v-2.25h2.166v2.25zm0-5.063h-2.166v-2.25h2.166v2.25z"
+                                  transform="rotate(-45 23.243 9.257)"
+                                ></path>
+                              </svg>
+                              <span class="buy-txt menu-link">Đặt vé</span>
+                            </a>
+                          </td>
+                        </tr>
+                      </tbody>
+                  </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  {% endblock %}

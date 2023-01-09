@@ -1,0 +1,350 @@
+{% extends 'homePage.html' %}
+{% load static %}
+  {% block content %}
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="hero-container">
+          <div class="hero-content">
+            <h1 class="hero-heading">
+              Luôn mang lại trải nghiệm tốt cho khách hàng <strong>FUTA Bus Lines.</strong>
+            </h1>
+            <p class="text hero-desc">
+              Cung cấp dịch vụ cho mọi nhu cầu của khách hàng
+              <span class="text-medium">FUTA Bus Lines</span><br>
+              "không phải chờ lâu, đi đâu cũng rẻ".
+            </p>
+            <a href="{% url 'index_2' %}" class="button button--primary button--rounded"
+              >Đặt vé ngay</a
+            >
+          </div>
+          <div class="hero-image">
+            <img src="{% static 'images/hero-image.png' %}" alt="" style="width:510px; height:416px"/>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="intro">
+      <div class="container">
+        <div class="intro-container">
+          <div class="intro-item">
+            <div class="intro-icon">
+              <img src="{% static 'images/user.png' %}" alt="" style="width:55px; height:56px"/>
+            </div>
+            <div class="intro-info">
+              <h3 class="intro-title">20M</h3>
+              <span class="intro-text">Khách hàng</span>
+            </div>
+          </div>
+          <div class="intro-item">
+            <div class="intro-icon">
+              <img src="{% static './images/location.png' %}" alt="" style="width:55px; height:56px"/>
+            </div>
+            <div class="intro-info">
+              <h3 class="intro-title">30+</h3>
+              <span class="intro-text">Địa điểm</span>
+            </div>
+          </div>
+          <div class="intro-item">
+            <div class="intro-icon">
+              <img src="{% static 'images/server.png' %}" alt="" style="width:55px; height:56px"/>
+            </div>
+            <div class="intro-info">
+              <h3 class="intro-title">30+</h3>
+              <span class="intro-text">Hơn 30 chi nhánh</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="plan">
+      <div class="container">
+        <div class="plan-header">
+          <h2 class="heading" style="color: #f53838">Tuyến phổ biến</h2>
+        </div>
+        <div class="cards">
+          <div class="card">
+            <img
+              src="{% static 'images/sg-dl.png' %}"
+              alt=""
+              class="card-image"
+              style="width:266px; height:200px"
+            />
+            <div class="card-content">
+              <div class="card-top">
+                <h3 class="card-title">SÀI GÒN - ĐÀ LẠT</h3>
+                <p style="text-align: center;">310km - 8h</p>
+                <span style="text-align: center">300.000đ</span>
+              </div>
+              <div class="card-bottom">
+                <div class="card-live">
+                  <ion-icon name="wifi"></ion-icon>
+                  <span><a href="{% url 'addcar' %}" class="button button--primary button--rounded"
+                    >Đặt vé ngay</a></span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <img
+              src="{% static 'images/sg-nt.png' %}"
+              alt=""
+              class="card-image"
+              style="width:266px; height:200px"
+            />
+            <div class="card-content">
+              <div class="card-top">
+                <h3 class="card-title">
+                  SÀI GÒN - NHA TRANG
+                </h3>
+                <p style="text-align: center;">450km - 9h</p>
+                <span style="text-align: center">420.000đ</span>
+              </div>
+              <div class="card-bottom">
+                <div class="card-live">
+                  <ion-icon name="wifi"></ion-icon>
+                  <span><a href="{% url 'addcar' %}" class="button button--primary button--rounded"
+                    >Đặt vé ngay</a></span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <img
+              src="{% static 'images/sg-cm.png' %}"
+              alt=""
+              class="card-image"
+              style="width:266px; height:200px"
+            />
+            <div class="card-content">
+              <div class="card-top">
+                <h3 class="card-title">
+                  SÀI GÒN - CÀ MAU
+                </h3>
+                <p style="text-align: center;">357km - 8h</p>
+                <span style="text-align: center">340.000đ</span>
+              </div>
+              <div class="card-bottom">
+                <div class="card-live">
+                  <ion-icon name="wifi"></ion-icon>
+                  <span><a href="{% url 'addcar' %}" class="button button--primary button--rounded"
+                    >Đặt vé ngay</a></span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <img
+              src="{% static 'images/sg-tv.png' %}"
+              alt=""
+              class="card-image"
+              style="width:266px; height:200px"
+            />
+            <div class="card-content">
+              <div class="card-top">
+                <h3 class="card-title">SÀI GÒN - TRÀ VINH</h3>
+                <p style="text-align: center;">150km - 4h</p>
+                <span style="text-align: center">120.000đ</span>
+              </div>
+              <div class="card-bottom">
+                <div class="card-live">
+                  <ion-icon name="wifi"></ion-icon>
+                  <span><a href="{% url 'addcar' %}" class="button button--primary button--rounded"
+                    >Đặt vé ngay</a></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="cards">
+          <div class="card">
+            <img
+              src="{% static 'images/sg-bp.png' %}"
+              alt=""
+              class="card-image"
+              style="width:266px; height:200px"
+            />
+            <div class="card-content">
+              <div class="card-top">
+                <h3 class="card-title">SÀI GÒN - BÌNH PHƯỚC</h3>
+                <p style="text-align: center;">250km - 6h</p>
+                <span style="text-align: center">220.000đ</span>
+              </div>
+              <div class="card-bottom">
+                <div class="card-live">
+                  <ion-icon name="wifi"></ion-icon>
+                  <span><a href="{% url 'addcar' %}" class="button button--primary button--rounded"
+                    >Đặt vé ngay</a></span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <img
+              src="{% static 'images/sg-ct.png' %}"
+              alt=""
+              class="card-image"
+              style="width:266px; height:200px"
+            />
+            <div class="card-content">
+              <div class="card-top">
+                <h3 class="card-title">
+                  SÀI GÒN - CẦN THƠ
+                </h3>
+                <p style="text-align: center;">190km - 4h</p>
+                <span style="text-align: center">165.000đ</span>
+              </div>
+              <div class="card-bottom">
+                <div class="card-live">
+                  <ion-icon name="wifi"></ion-icon>
+                  <span><a href="{% url 'addcar' %}" class="button button--primary button--rounded"
+                    >Đặt vé ngay</a></span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <img
+              src="{% static 'images/sg-rg.png' %}"
+              alt=""
+              class="card-image"
+              style="width:266px; height:200px"
+            />
+            <div class="card-content">
+              <div class="card-top">
+                <h3 class="card-title">
+                  SÀI GÒN - RẠCH GIÁ
+                </h3>
+                <p style="text-align: center;">235km - 8h</p>
+                <span style="text-align: center">190.000đ</span>
+              </div>
+              <div class="card-bottom">
+                <div class="card-live">
+                  <ion-icon name="wifi"></ion-icon>
+                  <span><a href="{% url 'addcar' %}" class="button button--primary button--rounded"
+                    >Đặt vé ngay</a></span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <img
+              src="{% static 'images/sg-cd.png' %}"
+              alt=""
+              class="card-image"
+              style="width:266px; height:200px"
+            />
+            <div class="card-content">
+              <div class="card-top">
+                <h3 class="card-title">SÀI GÒN - CHÂU ĐỐC</h3>
+                <p style="text-align: center;">240km - 5h</p>
+                <span style="text-align: center">175.000đ</span>
+              </div>
+              <div class="card-bottom">
+                <div class="card-live">
+                  <ion-icon name="wifi"></ion-icon>
+                  <span><a href="{% url 'addcar' %}" class="button button--primary button--rounded"
+                    >Đặt vé ngay</a></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </section>
+    <!--<section class="customer">
+      <div class="container">
+        <div class="boxed">
+          <h2 class="heading" style="color: #f53838">Được hàng ngàn khách hàng đánh giá tin cậy</h2>
+        </div>
+        <div class="customer-list">
+          <div class="customer-item">
+            <div class="customer-top">
+              <div class="customer-info">
+                <div class="customer-user">
+                  <img src="{% static 'images/user.png' %}" alt="" style="width:55px; height:56px">
+                </div>
+                <div class="customer-content">
+                  <h3 class="heading-small customer-name">TienZe</h3>
+                  <span class="text-small customer-address">LaiVung, DongThap</span>
+                </div>
+              </div>
+              <div class="customer-rating">
+                <span>4.5</span>
+                <img src="{% static 'images/icon-star.svg' %}" alt="" style="width:16px; height:17px">
+              </div>
+            </div>
+            <div class="text customer-desc">“Dịch vụ tốt”.</div>
+          </div>
+          <div class="customer-item">
+            <div class="customer-top">
+              <div class="customer-info">
+                <div class="customer-user">
+                  <img src="{% static 'images/user.png' %}" alt="" style="width:55px; height:56px">
+                </div>
+                <div class="customer-content">
+                  <h3 class="heading-small customer-name">TanNguyen</h3>
+                  <span class="text-small customer-address">QuyNhon, BinhDinh</span>
+                </div>
+              </div>
+              <div class="customer-rating">
+                <span>4.5</span>
+                <img src="{% static 'images/icon-star.svg' %}" alt="" style="width:16px; height:17px"> 
+              </div>
+            </div>
+            <div class="text customer-desc">“Good”.</div>
+          </div>
+          <div class="customer-item">
+            <div class="customer-top">
+              <div class="customer-info">
+                <div class="customer-user">
+                  <img src="{% static 'images/user.png' %}" alt="" style="width:55px; height:56px">
+                </div>
+                <div class="customer-content">
+                  <h3 class="heading-small customer-name">LocLam</h3>
+                  <span class="text-small customer-address">TieuCan, TraVinh</span>
+                </div>
+              </div>
+              <div class="customer-rating">
+                <span>4.5</span>
+                <img src="{% static 'images/icon-star.svg' %}" alt="" style="width:16px; height:17px">
+              </div>
+            </div>
+            <div class="text customer-desc">“Nhân viên nhiệt tình, good”.</div>
+          </div>
+          <div class="customer-item">
+            <div class="customer-top">
+              <div class="customer-info">
+                <div class="customer-user">
+                  <img src="{% static 'images/user.png' %}" alt="" style="width:55px; height:56px">
+                </div>
+                <div class="customer-content">
+                  <h3 class="heading-small customer-name">ThanhVuong</h3>
+                  <span class="text-small customer-address">BaRia, VungTau</span>
+                </div>
+              </div>
+              <div class="customer-rating">
+                <span>4.5</span>
+                <img src="{% static 'images/icon-star.svg' %}" alt="" style="width:16px; height:17px">
+              </div>
+            </div>
+            <div class="text customer-desc">“Amazing”.</div>
+          </div>
+        </div>
+      </div>
+    </section>-->
+    <section class="subscribe">
+      <div class="container">
+        <div class="subscribe-container">
+          <div class="subscribe-content">
+            <h2 class="heading">FUTABusLines</h2>
+            <p class="text">Đặt vé ngay để trải nghiệm các dịch vụ đặc biệt.</p>
+          </div>
+          <a href="#" class="button button--primary button--rounded button--shadow">Đặt vé ngay</a>
+        </div>
+      </div>
+    </section>
+  </main>
+  {% endblock %}

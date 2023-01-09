@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% load static %}
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FUTA Bus Lines</title>
+    <link
+    rel="stylesheet"
+    type="text/css"
+    href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
+  />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/app.css' %}">
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <div class="container">
+          <div class="header-title">
+            <h3 class="h1">HỆ THỐNG QUẢN LÝ VẬN TẢI FUTA-BUSLINE</h3>
+          </div>
+          <div class="header-container">
+            <img src="{% static 'images/logo-futabus.png' %}" alt="" class="header-logo" style="width:181px; height:41px"/>
+            <ul class="menu">
+              <li class="menu-item">
+                <a href="{% url 'index_1' %}" class="menu-link">Trang chủ</a>
+              </li>
+              <li class="menu-item">
+                <a href="{% url 'index_2' %}" class="menu-link">Lịch trình</a>
+              </li>
+              <li class="menu-item">
+                <a href="#" class="menu-link">Dịch vụ</a>
+              </li>
+              <li class="menu-item">
+                <a href="#" class="menu-link">Hóa đơn</a>
+              </li>
+              <li class="menu-item">
+                <a href="#" class="menu-link">Bài viết</a>
+              </li>
+              <li class="menu-item">
+                <a href="#" class="menu-link">Liên hệ</a>
+              </li>
+              <li class="menu-item menu-item--auth">
+                <a href="{% url 'index_3' %}" class="button button--outline">Đăng nhập</a>
+              </li>
+            </ul>
+            <div class="menu-toggle">
+              <span></span><span></span><span></span>
+            </div>
+            <div class="header-auth">
+              <a href="{% url 'index_3' %}" class="button button--outline">Đăng nhập</a>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      {% block content %}
+
+      {% endblock%}
+
+      <footer class="footer">
+        <div class="container">
+          <div class="footer-container">
+            <div class="footer-column">
+              <a href="index.html" class="footer-logo">
+                <img src="{% static 'images/logo-futabus.png' %}" alt="" style="width:181px; height:41px">
+              </a>
+              <p class="footer-desc text"><span class="text-medium">FUTABusLines</span> Luôn mang đến cho khách hàng những trải nghiệm tốt nhất.</p>
+              <div class="social">
+                <a href="#" class="social-item">
+                  <img src="{% static 'images/Facebook.png' %}" alt="" style="width:70px; height:70px">
+                </a>
+                <a href="#" class="social-item">
+                  <img src="{% static 'images/Twitter.png' %}" alt="" style="width:70px; height:70px">
+                </a>
+                <a href="#" class="social-item">
+                  <img src="{% static 'images/Instagram.png' %}" alt="" style="width:70px; height:70px">
+                </a>
+              </div>
+              <p class="copyright">©2022FUTABusLines</p>
+            </div>
+            <div class="footer-column">
+              <h3 class="footer-heading heading-small">FUTABusLines</h3>
+              <ul class="footer-links">
+                <li class="footer-item">
+                  <a href="#" class="footer-link">Về chúng tôi</a>
+                </li>
+                <li class="footer-item">
+                  <a href="#" class="footer-link"> Lịch trình</a>
+                </li>
+                <li class="footer-item">
+                  <a href="#" class="footer-link"> Tin tức</a>
+                </li>
+                <li class="footer-item">
+                  <a href="#" class="footer-link"> Tuyển dụng</a>
+                </li>
+                <li class="footer-item">
+                  <a href="#" class="footer-link"> Tra cứu thông tin đặt vé</a>
+                </li>
+              </ul>
+            </div>
+            <div class="footer-column">
+              <h3 class="footer-heading heading-small">Tổng đài</h3>
+              <ul class="footer-links">
+                <li class="footer-item">
+                  <a href="#" class="footer-link">1900 6067</a>
+                </li>
+                <li class="footer-item">
+                  <a href="#" class="footer-link">Email: hotro@futa.vn</a>
+                </li>
+                <li class="footer-item">
+                  <a href="#" class="footer-link">Điện thoại: <br> 028 3838 6852</a>
+                </li>
+                <li class="footer-item">
+                  <a href="#" class="footer-link">Fax:<br> 028 3838 6853</a>
+                </li>
+              </ul>
+            </div>
+            <div class="footer-column">
+              <h3 class="footer-heading heading-small">Sinh viên</h3>
+              <ul class="footer-links">
+                <li class="footer-item">
+                  <a href="#" class="footer-link">Lâm Thanh Lộc</a>
+                </li>
+                <li class="footer-item">
+                  <a href="#" class="footer-link">Mssv: <br> 1900008039</a>
+                </li>
+                <li class="footer-item">
+                  <a href="#" class="footer-link">Email: <br> thanhloclol6@gmail.com</a>
+                </li>
+                <li class="footer-item">
+                  <a href="#" class="footer-link">Điện thoại: <br> 0964648037</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <script
+    type="text/javascript"
+    src="https://code.jquery.com/jquery-1.11.0.min.js"
+  ></script>
+  <script
+    type="text/javascript"
+    src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"
+  ></script>
+  <script
+    type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
+  ></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+  <script src="{% static 'scripts/app.js' %}"></script>
+</body>
+</html>
