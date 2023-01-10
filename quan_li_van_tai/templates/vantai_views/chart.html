@@ -1,0 +1,63 @@
+{% extends 'dashboard.html' %} 
+{% load static %} 
+{% block content %}
+    <div class="container-fluid" 
+    style="padding-left: 247px;
+    padding-top: 50px;">
+        <!-- Page Heading -->
+        <h2 class="mt-4">Báo cáo thống kê</h2>
+      <ol class="breadcrumb mb-4">
+        <li class="breadcrumb-item">
+          <a href="index.html">Dashboard</a>
+        </li>
+        <li class="breadcrumb-item active">Tables</li>
+      </ol>
+        <!-- Content Row -->
+        <div class="row">
+            <div class="col-xl-8 col-lg-7">
+                <!-- Bar Chart -->
+                <div class="card shadow mb-4">
+                    <div class="card-header py-3">
+                        <h6 class="m-0 font-weight-bold text-primary">Biểu đồ cột</h6>
+                    </div>
+                    <div class="card-body">
+                        <div class="chart-bar"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+                            <canvas id="myBarChart" width="935" height="400" style="display: block; height: 320px; width: 748px;" class="chartjs-render-monitor"></canvas>
+                        </div>
+                        <hr>
+    
+                    </div>
+                </div>
+                <!-- Area Chart -->
+                <div class="card shadow mb-4">
+                    <div class="card-header py-3">
+                        <h6 class="m-0 font-weight-bold text-primary">Biểu đồ khu vực</h6>
+                    </div>
+                    <div class="card-body">
+                        <div class="chart-area"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+                            <canvas id="myAreaChart" style="display: block; height: 320px; width: 748px;" width="935" height="400" class="chartjs-render-monitor"></canvas>
+                        </div>
+                        <hr>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    </div>
+<!-- Bootstrap core JavaScript-->
+<script src="{% static 'scripts/chart/jquery.min.js' %}"></script>
+<script src="{% static 'scripts/chart/bootstrap.bundle.min.js' %}"></script>
+
+<!-- Core plugin JavaScript-->
+<script src="{% static 'scripts/chart/jquery.easing.min.js' %}"></script>
+
+<!-- Custom scripts for all pages-->
+<script src="{% static 'scripts/chart/sb-admin-2.min.js' %}"></script>
+
+<!-- Page level plugins -->
+<script src="{% static 'scripts/chart/Chart.min.js' %}"></script>
+
+<!-- Page level custom scripts -->
+<script src="{% static 'scripts/chart/chart-area.js' %}"></script>
+<script src="{% static 'scripts/chart/chart-bar.js' %}"></script>
+{% endblock %}

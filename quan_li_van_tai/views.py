@@ -90,6 +90,9 @@ def lichTrinh(request):
 def login(request):
     return render(request, 'vantai_views/login.html')
 
+def chart(request):
+    return render(request, 'vantai_views/chart.html')
+
 
 def carsvexe(request):
     cars = []
