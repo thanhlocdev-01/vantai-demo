@@ -13,6 +13,7 @@ urlpatterns = [
     path('addcar', views.addcar, name = 'addcar'),
     
     path('chart', views.chart, name = 'chart'),
+    path('dashboard', views.dashboard, name = 'dashboard'),
     
     
     path('updatecar/<int:id>', views.updatecar, name = 'updatecar'),

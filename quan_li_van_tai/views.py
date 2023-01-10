@@ -93,6 +93,9 @@ def login(request):
 def chart(request):
     return render(request, 'vantai_views/chart.html')
 
+def dashboard(request):
+    return render(request, 'vantai_views/indexdb.html')
+
 
 def carsvexe(request):
     cars = []
